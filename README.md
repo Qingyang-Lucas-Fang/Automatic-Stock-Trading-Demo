@@ -3,6 +3,11 @@ This is a fully automatic stock trading engine with high performance in backtest
 # AlphaForge-HFT: Dynamic Multi-Strategy Execution Engine Intro
 AlphaForge-HFT (my repo) is a modular high-frequency trading (HFT) framework designed for intraday equity trading. The platform integrates real-time data ingestion, a rolling 8-minute optimization engine, and a vectorized execution layer to dynamically adapt to shifting market regimes.
 
+## Results
+We successfully capture some position signals, but not all, still making a profit virtually.
+<img width="1469" height="830" alt="Screenshot 2026-01-01 at 12 27 02 AM" src="https://github.com/user-attachments/assets/ca320ad8-b2c5-47c3-8177-c78dd8b9d88a" />
+
+
 # System Architecture
 ## Workers
 The platform operates on a Controller-Worker architecture, decoupling data ingestion from heavy computation to ensure ultra-low latency in signal execution.
