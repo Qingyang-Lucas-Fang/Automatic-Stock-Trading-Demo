@@ -21,21 +21,15 @@ The platform operates on a Controller-Worker architecture, decoupling data inges
 
 ## Optimization Objective
 EWM Weighted Sharpe
-Unlike standard backtests, our engine uses a Weighted Sharpe Ratio. We apply a decay factor to the 180-minute lookback window to prioritize recent price action, ensuring the selected strategy is "fit for purpose" for the immediate market micro-structure. \\
+Unlike standard backtests, our engine uses a Weighted Sharpe Ratio. We apply a decay factor to the 180-minute lookback window to prioritize recent price action, ensuring the selected strategy is "fit for purpose" for the immediate market micro-structure. 
+
 $$Sharpe_{Weighted} = \frac{\mu_{w}}{\sigma_{w}} \times \sqrt{252 \times 6.5 \times 60}$$
 
 # Install Info
 ## Prerequisites
-Twelve Data API Key\\
+Twelve Data API Key
+
 Python 3.9+ Intepretor
-
-## Installation Steps
-Clone the repository:
-git clone https://github.com/yourusername/AlphaForge-HFT.git
-cd AlphaForge-HFT
-
-Install dependencies:
-pip install pandas numpy dash plotly twelvedata
 
 ## Execution Pipeline
 To run the full suite, execute the following components in order:
