@@ -10,7 +10,8 @@ The platform operates on a Controller-Worker architecture, decoupling data inges
 3. Execution Layer: Implements the optimal parameter set from the backtest in real-time without computational overhead at the execution stage.
 4. Monitoring Interface: A Dash-based interactive dashboard visualizing equity curves and real-time position markers.
 
-Strategy,Logic,Optimization Parameters
-MFI Adaptive,Volume-weighted momentum focusing on money flow divergence.,Boundary sensitivity & Lookback period
-Mean Reversion,Volatility-adjusted Bollinger-style bands using ATR for dynamic width.,Sensitivity & ATR Rolling window
-RSI Breakout,Z-score normalized RSI to identify extreme regime shifts.,RSI Period & Normalization window
+| Strategy | Logic | Optimization Parameters |
+| :--- | :--- | :--- |
+| **MFI Adaptive** | Volume-weighted momentum focusing on money flow divergence. | Boundary sensitivity & Lookback period |
+| **Mean Reversion** | Volatility-adjusted bands using ATR for dynamic expansion/contraction. | Sensitivity factor & ATR Rolling window |
+| **RSI Breakout** | Z-score normalized RSI to identify extreme regime shifts and momentum bursts. | RSI Period & Normalization window |
