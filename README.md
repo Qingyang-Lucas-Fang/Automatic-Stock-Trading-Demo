@@ -24,57 +24,61 @@ The platform operates on a Controller-Worker architecture, decoupling data inges
 | **Mean Reversion** | Volatility-adjusted bands using ATR for dynamic expansion/contraction. | Sensitivity factor & ATR Rolling window |
 | **RSI Breakout** | Z-score normalized RSI to identify extreme regime shifts and momentum bursts. | RSI Period & Normalization window |
 
-## Optimization Objective and Contraints
+## Optimization Objective and Constraints
+
 Let:
 
-- \( P_t \): close price at time \( t \)
-- \( \text{pos}_t \in \{-1, 0, 1\} \): position held during interval \( t \)
+- P_t : close price at time t  
+- pos_t ∈ { -1, 0, 1 } : position held during interval t  
+
+---
 
 ### Price Return
-\[
-r_t = \frac{P_t - P_{t-1}}{P_{t-1}}
-\]
+
+r_t = (P_t - P_{t-1}) / P_{t-1}
+
+---
 
 ### Strategy Return
-\[
-R_t = r_t \cdot \text{pos}_t
-\]
+
+R_t = r_t × pos_t
+
+---
 
 ### Gross Profit (GP)
-\[
-GP = \sum_{t : R_t > 0} R_t
-\]
+
+GP = sum of R_t for all R_t > 0
+
+---
 
 ### Gross Loss (GL)
-\[
-GL = \sum_{t : R_t < 0} |R_t|
-\]
 
-### Definition
-\[
-\boxed{
-\text{Profit Factor (PF)} = \frac{GP}{GL}
-}
-\]
+GL = sum of |R_t| for all R_t < 0
+
+---
+
+### Definition: Profit Factor
+
+Profit Factor (PF) = GP / GL
+
+---
 
 ### Practical Constraints
-- If \( GL = 0 \): PF is undefined → strategy rejected
-- Minimum trade count is enforced to avoid overfitting
+
+- If GL = 0 → Profit Factor is undefined → strategy is rejected  
+- A minimum trade count is enforced to reduce overfitting  
 
 ---
 
 ### Trade Count (Stability Filter)
 
-Let position changes indicate trades:
+Trades are identified by position changes:
 
-\[
-\text{Trades} = \sum_{t} \left| \text{pos}_t - \text{pos}_{t-1} \right|
-\]
+Trades = sum over t of |pos_t − pos_{t−1}|
 
-Used as a constraint:
-\[
-\text{Trades} \ge N_{\min}
-\]
+Constraint applied:
+
+Trades ≥ N_min
 
 # Install Info
 ## Prerequisites
