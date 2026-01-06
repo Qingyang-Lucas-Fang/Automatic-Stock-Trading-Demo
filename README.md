@@ -27,8 +27,11 @@ The platform operates on a Controller-Worker architecture, decoupling data inges
 ## Optimization Objective
 Pofit Factor
 let $r_t$ be the strategy return at time $t$.
-Gross Profit: $GP=t:rt​>0∑​rt$​
+
+Gross Profit: $GP=t:rt​>0∑​rt$
+​
 Gross Loss (absolute value): $GL=t:rt​<0∑​∣rt​∣$
+
 Profit Factor: $GP/GL$
 
 # Install Info
