@@ -1,7 +1,7 @@
 # Automatic-Stock-Trading-Demo
-This is a fully automatic stock trading engine with high performance in backtest.
-# AlphaForge-HFT: Dynamic Multi-Strategy Execution Engine Intro
-AlphaForge-HFT (my repo) is a modular high-frequency trading (HFT) framework designed for intraday equity trading. The platform integrates real-time data ingestion, a rolling 8-minute optimization engine, and a vectorized execution layer to dynamically adapt to shifting market regimes.
+This is a fully automatic stock trading engine that can implemented in real trading with high performance in backtest.
+# AlphaForge-HFT Introduction
+AlphaForge-HFT (my repo) is a modular high-frequency trading (HFT) framework designed for intraday equity trading. The platform integrates real-time data ingestion, a rolling optimization engine with three popular trading strategies integrated, a vectorized execution layer to dynamically adapt to shifting market regimes and a dashboard that can visualize the equity curve and the trading signal exits.
 
 ## Results
 We successfully capture some position signals, but not all, still making a profit virtually.
@@ -25,16 +25,17 @@ The platform operates on a Controller-Worker architecture, decoupling data inges
 | **RSI Breakout** | Z-score normalized RSI to identify extreme regime shifts and momentum bursts. | RSI Period & Normalization window |
 
 ## Optimization Objective
-EWM Weighted Sharpe
-Unlike standard backtests, our engine uses a Weighted Sharpe Ratio. We apply a decay factor to the 180-minute lookback window to prioritize recent price action, ensuring the selected strategy is "fit for purpose" for the immediate market micro-structure. 
-
-$$Sharpe_{Weighted} = \frac{\mu_{w}}{\sigma_{w}} \times \sqrt{252 \times 6.5 \times 60}$$
+Pofit Factor
+let $r_t$ be the strategy return at time $t$.
+Gross Profit: $GP=t:rt​>0∑​rt$​
+Gross Loss (absolute value): $GL=t:rt​<0∑​∣rt​∣$
+Profit Factor: $GP/GL$
 
 # Install Info
 ## Prerequisites
 Twelve Data API Key
 
-Python 3.9+ Intepretor
+Python 3.13 Intepretor
 
 ## Execution Pipeline
 To run the full suite, execute the following components in order:
