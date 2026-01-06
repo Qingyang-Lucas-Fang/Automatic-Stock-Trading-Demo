@@ -28,44 +28,44 @@ The platform operates on a Controller-Worker architecture, decoupling data inges
 
 Let:
 
-- P_t : close price at time t  
-- pos_t ∈ { -1, 0, 1 } : position held during interval t  
+- $P_t$ : close price at time t  
+- $pos_t$ ∈ { -1, 0, 1 } : position held during interval t  
 
 ---
 
 ### Price Return
 
-r_t = (P_t - P_{t-1}) / P_{t-1}
+$r_t = (P_t - P_{t-1}) / P_{t-1}$
 
 ---
 
 ### Strategy Return
 
-R_t = r_t × pos_t
+$R_t = r_t × pos_t$
 
 ---
 
 ### Gross Profit (GP)
 
-GP = sum of R_t for all R_t > 0
+$GP = sum of R_t$ for all $R_t > 0$
 
 ---
 
 ### Gross Loss (GL)
 
-GL = sum of |R_t| for all R_t < 0
+$GL = sum of |R_t|$ for all $R_t < 0$
 
 ---
 
 ### Definition: Profit Factor
 
-Profit Factor (PF) = GP / GL
+$Profit Factor (PF) = GP / GL$
 
 ---
 
 ### Practical Constraints
 
-- If GL = 0 → Profit Factor is undefined → strategy is rejected  
+- If $GL = 0$ → Profit Factor is undefined → strategy is rejected  
 - A minimum trade count is enforced to reduce overfitting  
 
 ---
@@ -74,11 +74,11 @@ Profit Factor (PF) = GP / GL
 
 Trades are identified by position changes:
 
-Trades = sum over t of |pos_t − pos_{t−1}|
+$Trades = sum over t of |pos_t − pos_{t−1}|$
 
 Constraint applied:
 
-Trades ≥ N_min
+$Trades ≥ N_min$
 
 # Install Info
 ## Prerequisites
